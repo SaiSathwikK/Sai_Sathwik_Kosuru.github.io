@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Information - Sai Sathwik Kosuru</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding-top: 84px; /* Add padding to prevent content from being covered by the app bar */
+            background-color: #f5f5f5; /* Light grey background color */
+        }
+        .mdc-top-app-bar {
+            background-color: #6200EE;
+            color: white;
+            height: 64px; /* Container height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+  .highlight {
+            font-weight: bold;
+            color: #6200EE; /* Highlight color matching the app bar */
+        }
+
+        .mdc-top-app-bar__row {
+            height: 100%;
+            padding-left: 16px; /* Left padding */
+            padding-right: 16px; /* Right padding */
+        }
+        .mdc-top-app-bar__title {
+            margin-left: 0; /* Remove margin to align title properly */
+        }
+        .mdc-top-app-bar__section {
+            display: flex;
+            align-items: center; /* Vertically center elements */
+        }
+        .mdc-top-app-bar__action-item {
+            width: 40px; /* Icon button state layer size */
+            height: 40px; /* Icon button state layer size */
+        }
+        .content {
+            margin: 18px;
+            text-align: center;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd; /* Optional: adds a border around the iframe */
+            margin-top: 20px;
+        }
+        .request-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6200EE;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top App Bar -->
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Back to Experience" onclick="window.location.href='sathwik.html#works-tab'">
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <span class="mdc-top-app-bar__title">Sai Sathwik Kosuru</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <a href="mailto:SaiSathwik363@gmail.com" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Contact Me">
+                    <i class="material-icons">mail_outline</i>
+                </a>
+                <a href="path-to-your-cv.pdf" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="View My CV">
+                    <i class="material-icons">description</i>
+                </a>
+            </section>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <a href="mailto:SaiSathwik363@gmail.com?subject=Request Information" class="request-button">Request Information</a>
+
+        <!-- PDF Viewer -->
+        <div class="pdf-container">
+            <iframe src="GICaps__Leveraging_Geometrico_Physical_Computer_Vision_Techniques_On_Capsule_Vision_Endoscopy.pdf" width="600" height="500" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+    </div>
+<div class="mdc-card content-card" style="margin: 18px; padding: 20px; text-align: center; background-color: #f5f5f5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 style="text-align: center;">Synopsis</h3>
+    <p style=" font-size: 1.5em; text-align: justify;">
+        Endoscopy has proved effective for the human body’s <span class="highlight">gastrointestinal</span> anatomic diagnosis and prognosis. Implementing <span class="highlight">Feature Selection</span> and <span class="highlight">Feature Engineering</span> on internal organs is a tough task that requires complex statistical and numerical analysis of feature vectors across chromatic contours and density considerations of the input images. In the current work, we amplified the train dataset chromatic intensities by 65%, improving feature selection efficiency by 25%, and <span class="highlight">Computer Vision</span> implementation effectiveness by 85%. We employed Computer Vision Modules like <span class="highlight">YOLO NAS</span>, <span class="highlight">OrganAMNIST</span>, <span class="highlight">OrganCMNIST</span>, and <span class="highlight">TissueMNIST</span> to produce an application that implements predictions on internal organs and tissues of the gastrointestinal tract up to the stomach for examining the proximity of ulcers and other diseases/comorbidities like diseases.
+    </p>
+    <p style="font-size: 1.5em; text-align: justify;">
+        Our work produced an overall accuracy of 91.87% compounded as an ensemble accuracy. It was successful in detecting 99.87% of gastrointestinal diseases, producing a probable increase of 37% in the field of health computational sciences. The use of endoscopy for diagnosing and predicting gastrointestinal conditions has revolutionized the approach to handling internal organ health issues. The application of advanced computer vision techniques has not only enhanced the accuracy of diagnoses but also streamlined the process of monitoring and prognosticating potential health risks.
+    </p>
+    <p style="font-size: 1.5em; text-align: justify;">
+        By leveraging the capabilities of <span class="highlight">YOLO NAS</span>, <span class="highlight">OrganAMNIST</span>, <span class="highlight">OrganCMNIST</span>, and <span class="highlight">TissueMNIST</span>, we have significantly improved the predictive power of our models. The increase in chromatic intensity and the subsequent boost in feature selection efficiency have played crucial roles in achieving these results. The findings from this study underscore the importance of integrating sophisticated data processing techniques with medical imaging technologies to advance the field of gastrointestinal health diagnostics.
+    </p>
+</div>
+
+</body>
+</html>

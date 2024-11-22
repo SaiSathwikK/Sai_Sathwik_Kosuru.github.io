@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Information - Sai Sathwik Kosuru</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding-top: 84px; /* Add padding to prevent content from being covered by the app bar */
+            background-color: #f5f5f5; /* Light grey background color */
+        }
+        .mdc-top-app-bar {
+            background-color: #6200EE;
+            color: white;
+            height: 64px; /* Container height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .mdc-top-app-bar__row {
+            height: 100%;
+            padding-left: 16px; /* Left padding */
+            padding-right: 16px; /* Right padding */
+        }
+        .mdc-top-app-bar__title {
+            margin-left: 0; /* Remove margin to align title properly */
+        }
+        .mdc-top-app-bar__section {
+            display: flex;
+            align-items: center; /* Vertically center elements */
+        }
+        .mdc-top-app-bar__action-item {
+            width: 40px; /* Icon button state layer size */
+            height: 40px; /* Icon button state layer size */
+        }
+        .content {
+            margin: 18px;
+            text-align: center;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd; /* Optional: adds a border around the iframe */
+            margin-top: 20px;
+        }
+        .request-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6200EE;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top App Bar -->
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Back to Experience" onclick="window.location.href='sathwik.html#works-tab'">
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <span class="mdc-top-app-bar__title">Sai Sathwik Kosuru</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <a href="mailto:SaiSathwik363@gmail.com" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Contact Me">
+                    <i class="material-icons">mail_outline</i>
+                </a>
+                <a href="path-to-your-cv.pdf" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="View My CV">
+                    <i class="material-icons">description</i>
+                </a>
+            </section>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <a href="mailto:SaiSathwik363@gmail.com?subject=Request Information" class="request-button">Request Information</a>
+
+        <!-- PDF Viewer -->
+        <div class="pdf-container">
+            <iframe src="Deep_Learning_Architectures_For_Creating_Large_Language_Models_LLMs_.pdf" width="600" height="500" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+    </div>
+<div class="mdc-card content-card" style="margin: 18px; padding: 20px; text-align: center; background-color: #f5f5f5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 style="text-align: center;">Essay on the Apriori Model for BERT</h3>
+    <p style="color: black; font-size: 1.5em; text-align: justify;">
+        The apriori model for <span class="highlight">BERT</span> is demonstrated in figure 9. <span class="highlight">BERT</span> involves encoding and decoding of over 110 million parameters which involves a significant amount of analysis for various aspects. These include subjective and objective analysis of input features. Subjective analysis encompasses the semantical structure of the input corpus, syntactical intelligence of the text stream, and emotional and semantical extraction from the text. Objective analysis, on the other hand, focuses on the amount of instantaneously trainable text, the impact of individual components on overall performance, and step-wise performance at each layer. <span class="highlight">BERT</span> has simultaneous architectural applications and feed-forward training components in its architecture. The Feedforward Layer and <span class="highlight">Multi-Head Attention</span> components are integral parts of this architecture.
+    </p>
+    <p style="color: black; font-size: 1.5em; text-align: justify;">
+        The <span class="highlight">Multi-Head Attention</span> Component computes simultaneous access to the training text corpus, handles multiple constraints and variations across different parts of the text, and expands the learning region of the <span class="highlight">LLM</span>. The Feed Forward Layer involves a straightforward mode of learning which entails normal learning procedures observed in other conventional neural networks. This forms a simplified base for the remaining complex procedures in the <span class="highlight">BERT</span> model. Additionally, an Adding & Normalization step is involved as an intermediary procedure in every step of the learning process.
+    </p>
+    <p style="color: black; font-size: 1.5em; text-align: justify;">
+        <span class="highlight">AlBERT</span>, a lightweight <span class="highlight">BERT</span> <span class="highlight">LLM</span>, is developed as an enhancement over the original <span class="highlight">BERT</span> model. It incorporates two parameter-reduction techniques, low memory consumption, increased training speed, repeated layers, and a simplified embedding matrix. AlBERT includes a passthrough layer called a backbone that supports the network's structure and optimizes performance. It also implements variational analysis on the provided text corpus, using one-to-many and one-to-one head techniques to ensure the universality of each trained component.
+    </p>
+    <p style="color: black; font-size: 1.5em; text-align: justify;">
+        From the analysis, it is clear that <span class="highlight">AlBERT</span> is better than the previous model in terms of memory efficiency, although it does not show significant performance enhancement. These findings highlight the importance of advanced data processing techniques in improving the efficiency and effectiveness of language models in computational linguistics.
+    </p>
+</div>
+
+
+</body>
+</html>
