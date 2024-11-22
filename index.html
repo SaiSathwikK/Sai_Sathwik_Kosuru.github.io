@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Sathwik Kosuru</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <style>
+/* Adaptive Layout for Different Screen Sizes */
+@media (max-width: 600px) {
+    * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding-top: 84px; /* Add padding to prevent content from being covered by the app bar */
+            background-color: #f5f5f5; /* Light grey background color */
+        }
+        .mdc-top-app-bar {
+            background-color: #6200EE;
+            color: white;
+            height: 64px; /* Container height */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .mdc-top-app-bar__row {
+            height: 100%;
+            padding-left: 16px; /* Left padding */
+            padding-right: 16px; /* Right padding */
+        }
+        .mdc-top-app-bar__title {
+            margin-left: 0; /* Remove margin to align title properly */
+        }
+        .mdc-top-app-bar__section {
+            display: flex;
+            align-items: center; /* Vertically center elements */
+        }
+        .mdc-top-app-bar__action-item {
+            width: 40px; /* Icon button state layer size */
+            height: 40px; /* Icon button state layer size */
+        }
+        .profile {
+            text-align: center;
+            margin-top: 40px; /* Increase margin to add more space below the app bar */
+        }
+        .profile img {
+            border-radius: 50%;
+        }
+        .profile h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .summary-card {
+            margin: 18px; /* Margin around the card */
+            padding: 16px; /* Left/right padding */
+            border-radius: 12px; /* 12dp corner radius */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for card effect */
+            width: calc(100% - 36px); /* Span the window width minus the margin */
+            max-width: calc(100% - 36px); /* Ensure max width with margin accounted */
+            box-sizing: border-box;
+            background-color: white; /* White background color for the summary card */
+        }
+        .summary {
+            text-align: start; /* Start-aligned text */
+        }
+        .summary p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333; /* Slightly darker text color */
+            font-size: 1.1em; /* Increase font size */
+            padding-bottom: 16px; /* Add space between paragraphs */
+        }
+        .highlight {
+            font-weight: bold;
+            color: #6200EE; /* Highlight color matching the app bar */
+        }
+        .mdc-tab-bar {
+            margin-left: 18px; 
+            margin-right: 18px; 
+            background-color: white;
+        }
+        .mdc-tab__content {
+            height: 48px; /* Container height (label text only) */
+            padding: 0 16px;
+        }
+        .mdc-tab__icon {
+            font-size: 24px; /* Icon size */
+        }
+        .mdc-tab--stacked .mdc-tab__content {
+            height: 64px; /* Container height (icon and label text) */
+        }
+        .mdc-tab-indicator--active .mdc-tab-indicator__content--underline {
+            height: 3px; /* Primary active indicator height */
+            border-radius: 3px 3px 0 0; /* Active indicator shape */
+        }
+        .mdc-tab-indicator__content--underline {
+            height: 2px; /* Secondary active indicator height */
+        }
+        .tab-content {
+            display: none;
+            margin-left: 18px; 
+            margin-right: 18px;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        .academics-table {
+            width: calc(100% - 36px); /* Adjust width to account for 18px margin on each side */
+            height: calc(100vh - 200px); /* Adjust height to window height minus space for other elements */
+            border-collapse: collapse;
+            margin: 0; /* Remove margin */
+        }
+        .academics-table th,
+        .academics-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top; /* Align text at the top */
+        }
+        .academics-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top App Bar -->
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <span class="mdc-top-app-bar__title">Sai Sathwik Kosuru</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"> <a href="mailto:SaiSathwik363@gmail.com" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Contact Me"> <i class="material-icons">mail_outline</i> </a> <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="View My CV" onclick="window.location.href='path-to-your-cv.pdf'"> <i class="material-icons">description</i> </button>
+            </section>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <div class="profile">
+       <img src="Sai Sathwik Kosuru-Passport Sized Photo.jpg" alt="Sai Sathwik Kosuru's Photo" width="150" height="150">
+ <h1>Sai Sathwik Kosuru</h1>
+    </div>
+
+    <!-- Summary Section -->
+    
+    <!-- Tabs Section -->
+  <!-- Tabs Section -->
+<div class="mdc-tab-bar" style="margin-left: 18px; margin-right: 18px;">
+    <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+                <button class="mdc-tab mdc-tab--stacked mdc-tab--active" aria-selected="true" tabindex="0" id="home-tab">
+                    <span class="mdc-tab__content">
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
+                    </span>
+                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+               <button class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="contributions-tab">
+    <span class="mdc-tab__content">
+        <span class="mdc-tab__icon material-icons" aria-hidden="true">science</span>
+        <span class="mdc-tab__text-label">My Research</span>
+    </span>
+    <span class="mdc-tab-indicator">
+        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+    </span>
+    <span class="mdc-tab__ripple"></span>
+</button>
+
+                <button class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="works-tab">
+                    <span class="mdc-tab__content">
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">work</span>
+                        <span class="mdc-tab__text-label">Experience</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+                <button class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="achievements-tab">
+                    <span class="mdc-tab__content">
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">emoji_events</span>
+                        <span class="mdc-tab__text-label">Achievements</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+                <button class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="academics-tab">
+                    <span class="mdc-tab__content">
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">school</span>
+                        <span class="mdc-tab__text-label">Academics</span>
+                    </span>
+                    <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                    </span>
+                    <span class="mdc-tab__ripple"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tab Contents -->
+<div class="tab-content tab-content-active" id="home-content" style="margin-left: 18px; margin-right: 18px;">
+  <div class="summary-card mdc-card">
+        <div class="summary">
+            <p>Has AI reached the pinnacle of Human Cognition? How advanced are its current knowledge acquisition capabilities? These questions sparked my interest in research on Epistemology in AI, calling it <span class="highlight">Epistemic AI</span>.</p>
+            <p><span class="highlight">Epistemology</span> is a philosophical theory that deals with human knowledge acquisition, reception, and reasoning. Due to the omnipresence of data-driven solutions in recent technologies, I find it interesting to integrate epistemology in AI.</p>
+            <p>I primarily researched on 3 kinds of knowledge: <span class="highlight">Factual</span>, <span class="highlight">Clinical</span>, and <span class="highlight">Knowledge Adaptations</span>.</p>
+            <p>Throughout my undergraduate studies, I collaborated with multiple Government Officials and R&D Departments through the communities I founded such as <span class="highlight">Student Research Cell</span>, <span class="highlight">WeHub</span>, <span class="highlight">Special AIML Research Lab</span>, etc.</p>
+            <p>My extensive research activities resulted in <span class="highlight">9 research papers</span>, <span class="highlight">3 patents</span>, <span class="highlight">3 research communities</span>, <span class="highlight">3 inter-institutional collaborations</span>, <span class="highlight">3 internships/fellowships/assistantships</span> and <span class="highlight">5 event-based contributions</span>.</p>
+            <p>I look forward to continuing my research on the question: <span class="highlight">"How can the architectural-performance trade-offs be transformed into supplementary knowledge channels for AI to self-assess itself?"</span>. Collaboration or Funding is highly requested. You may contact me using the mailbox provided in the top right.</p>
+        </div>
+    </div>
+<!-- Nationality Card -->
+<div class="mdc-card nationality-card" style="margin: 18px; padding: 20px;">
+    <h3 style="margin: 0; padding: 0;">Nationality</h3>
+    <p style="margin: 0; padding: 0;">
+        India <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" style="width: 24px; height: auto; vertical-align: middle;">
+        <a href="Sai Sathwik Kosuru-Aadhar (1).pdf" target="_blank" style="margin-left: 10px;">Verify</a>
+    </p>
+</div>
+
+<!-- Affiliations Card -->
+<div class="mdc-card affiliations-card" style="margin: 18px; padding: 20px;">
+    <h3 style="margin: 0; padding: 0;">Affiliations</h3>
+    <p style="margin: 0; padding: 0;">
+        B V Raju Institute of Technology
+        <a href="#" onclick="alert('This is my research domain used for publications'); return false;" style="margin-left: 10px;">bvrit.ac.in</a>
+    </p>
+    <p style="margin: 0; padding: 0;">
+        <a href="http://www.bvrit.ac.in" target="_blank">www.bvrit.ac.in</a>
+    </p>
+</div>
+
+<div class="mdc-card references-card" style="margin: 18px; padding: 20px;"> <h3 style="margin: 0; padding: 0;">References</h3> <p style="margin: 0; padding: 0;"> <a href="mailto:hod@bvrit.ac.in" target="_blank">Madhu Babu Chunduri</a><br> <a href="mailto:pallavi.lanke@bvrit.ac.in" target="_blank">Dr. Lanke Pallavi</a><br> <a href="mailto:padmanabhareddy_cseaiml@cbit.ac.in" target="_blank">Dr. Padhmanabha Reddy Y C A</a><br> <a href="mailto:21211a0568@bvrit.ac.in" target="_blank">Koustubha Debbata</a><br> <a href="mailto:21211a05c7@bvrit.ac.in" target="_blank">Kaushik Varma Datla</a><br> <a href="mailto:21211a0576@bvrit.ac.in" target="_blank">Abhinav Goud Dulam</a><br> <a href="mailto:21211a0589@bvrit.ac.in" target="_blank">Raghuveer Chaitanya</a><br> <a href="mailto:21211a05m1@bvrit.ac.in" target="_blank">Snehaja Parsi</a><br> <a href="mailto:21211a05d9@bvrit.ac.in" target="_blank">Chaitanya Kotagiri</a><br> <a href="mailto:21211a05f3@bvrit.ac.in" target="_blank">Rishanka Maddamshetti</a><br> <a href="mailto:21211a05t0@bvrit.ac.in" target="_blank">Aditya Om Sangani</a><br> <a href="mailto:21211a05p9@bvrit.ac.in" target="_blank">Srinivas Pullaboina</a><br> <a href="mailto:22215a0523@bvrit.ac.in" target="_blank">Sandhya Baindla</a> <h4 style="margin-top: 20px; margin-bottom: 5px;">Internship References</h4> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Deva Priyakumar</a><br> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Maitreya Maity</a><br> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Shreyansh Shukla</a><br> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Manender Yadav</a><br> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Aashish Anand</a><br> <a href="#" onclick="alert('This person prefers not to be contacted'); return false;">Vivek</a></div>
+<div class="summary-card mdc-card">
+    <div class="summary">
+        <p>Contact me</p>
+        <p>Sai Sathwik Kosuru</p>
+        <p>21-25-CSE Undergraduate from B V Raju Institute of Technology, Narsapur.</p>
+        <p>Alternate Email: saisathwik363@gmail.com</p>
+        <p>Mobile: +919848070224</p>
+        <div class="mdc-card__actions">
+            <a href="https://drive.google.com/file/d/1QgmNpI22Ob2a5Kxh9zj-pPVVcTzG6tBG/view?usp=drivesdk" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Resume/CV</a>
+            <a href="https://orcid.org/0009-0008-8057-8799" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Orcid</a>
+            <a href="https://scholar.google.com/citations?user=z_EZUAwAAAAJ&hl=en" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/sai-sathwik-kosuru-ba53b4223" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">LinkedIn</a>
+            <a href="https://github.com/SaiSathwik21211a05r6" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">GitHub</a>
+            <a href="https://www.medium.com/@21211A05R6" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Medium</a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<!-- Achievements Tab -->
+<div class="tab-content" id="achievements-content" style="margin-left: 18px; margin-right: 18px;">
+   <div class="mdc-card achievements-card" style="margin: 18px;">
+    <div class="mdc-card__primary-action">
+        <div class="mdc-card__content">
+            <div class="mdc-card__row">
+
+                <div class="mdc-card__secondary">
+                    <table style="width: 100%; border-collapse: 18px">
+                        <tr>
+                            <td style="width: 85%; border: 1px solid #000;"><b>Young Research Fellowship:</b> Annual Award on Research for AI in Healthcare</td>
+                            <td style="width: 15%; border: 1px solid #000;"><a href="link-to-file1.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Top in HoD Top 5 List:</b> Awarded to top 5 students for every batch ranked according to the following parameters: Research, Entrepreneurship, IT Skills, Oratory, and Ideation</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file2.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Special Mention in Infosys Campus Connect:</b> Awarded to the Top Student who presents Technology Coherently and Clearly</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file3.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Honor Card:</b> Awarded to the students who topped the class for at least 8 times</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file4.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Distinction Card:</b> Awarded to the Students with Aggregate >85\%</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file5.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>SOP GK Olympiad:</b> Obtained Top 50 Rank in 2015</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file6.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>International Hackathon:</b> Awarded Appreciatory Prize</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file7.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Young Scientist Federation:</b> Obtained 2nd Special Prize for my Solution on Computer Memory Organization</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file8.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Prefectorial Badge:</b> Awarded to School Leadership Board Leader</td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file9.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #000;"><b>Obtained the first position in an intra-school debate event on the topic- "Use of animals for BioChemical experiments in Research Laboratories"</b></td>
+                            <td style="border: 1px solid #000;"><a href="link-to-file10.pdf" style="color: linkcolor;">Link</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Contributions Tab Content -->
+<div class="tab-content" id="contributions-content" style="margin-left: 18px; margin-right: 18px;">
+<!-- Animated Card for Current Work --> <div class="animated-card"> <h3 style="font-weight: bold; font-size: larger;">Currently working on</h3> <p><p>I am currently working on tackling expensive, nuanced architectural performance trade-offs in designing deep learning models. I believe this work results will introduce a new paradigm of future research studies that help AI architects simplify how they optimize their algorithms using a simple cohort of parameters/rules. Our paper will be submitted for ICML 2025.</p></p> </div>
+    <label for="contributions-dropdown">Select Category:</label>
+    <select id="contributions-dropdown" onchange="showContributionsContent()">
+        <option value="conferences" selected>Conferences</option>
+        <option value="journals">Journals</option>
+        <option value="preprints">Preprints</option>
+        <option value="patents">Patents</option>
+        <option value="book-series">Book Series</option>
+    </select>
+
+    <!-- Conferences Section -->
+    <div id="conferences-content" class="contribution-section">
+        <div class="mdc-card contribution-card" style="margin: 18px;">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__content">
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Data Analytics on Women Opportunities in the field of technology</div>
+                        <div class="mdc-card__secondary">HORA 2023, Turkey</div>
+                    </div>
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Place: Turkey, Year: 2023</div>
+                        <div class="mdc-card__actions">
+                            <a href="https://drive.google.com/file/d/1lteHL4_3v6yq4VO9oc2_QN76I9MdHwaj/view?usp=sharing" download="Data_Analytics_on_Women_Opportunities_in_Technology.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                            <a href="Data_Analytics_on_Women_Opportunities_in_Technology.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-card contribution-card" style="margin: 18px;">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__content">
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Multi-Cuisine Multi-Data Prediction of Food Quality Using Object Detection Capabilities of YOLO NAS</div>
+                        <div class="mdc-card__secondary">ICCCMLA 2023, Turkey</div>
+                    </div>
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Place: Turkey, Year: 2023</div>
+                        <div class="mdc-card__actions">
+                            <a href="https://drive.google.com/file/d/1dg1dw6aGZM5FTQSOssMstmJHpnl9Xwro/view?usp=sharing" download="Multi_cuisine_and_Multi_data_Screening.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                            <a href="Multi_cuisine_and_Multi_data_Screening.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-card contribution-card" style="margin: 18px;">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__content">
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Empirical Techniques for Effort Estimation of Deep Learning Models</div>
+                        <div class="mdc-card__secondary">ICPR 2024, India</div>
+                    </div>
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Place: India, Year: 2024</div>
+                        <div class="mdc-card__actions">
+                            <a href="https://drive.google.com/file/d/1F8xUktLBr924WXGhcUzQbopUBk5Ga-6r/view?usp=sharing" download="Evaluation_Techniques_For_Effort_Estimation_in_Designing_Effective_ML_Models.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                            <a href="Evaluation_Techniques_For_Effort_Estimation_in_Designing_Effective_ML_Models.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-card contribution-card" style="margin: 18px;">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__content">
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">DynPR: Dynamic Evaluation of Patterns Across Data Streams Via Deployed Applications</div>
+                        <div class="mdc-card__secondary">CVPR 2025, Canada</div>
+                    </div>
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Place: Canada, Year: 2025</div>
+                        <div class="mdc-card__actions">
+                            <a href="https://drive.google.com/file/d/1TceL081s8zCYLeOPdqou5QRgDoMAI3CX/view?usp=sharing" download="DynPR__Dynamic_Evaluation_of_Patterns_Across_Data_Streams_Via_Deployed_Applications.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                            <a href="DynPR__Dynamic_Evaluation_of_Patterns_Across_Data_Streams_Via_Deployed_Applications.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-card contribution-card" style="margin: 18px;">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__content">
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">GICaps: Leveraging Geometrico-Physical Computer Vision Techniques On Capsule Vision Endoscopy</div>
+                        <div class="mdc-card__secondary">CVPR 2025</div>
+                    </div>
+                    <div class="mdc-card__row">
+                        <div class="mdc-card__primary">Place: CVPR, Year: 2025</div>
+                        <div class="mdc-card__actions">
+                            <a href="https://drive.google.com/file/d/1Wr2k5XqyZzQjUHrL_lRu2p5lgFLcyi0C/view?usp=sharing" download="GICaps__Leveraging_Geometrico_Physical_Computer_Vision_Techniques_On_Capsule_Vision_Endoscopy.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                            <a href="GICaps__Leveraging_Geometrico_Physical_Computer_Vision_Techniques_On_Capsule_Vision_Endoscopy.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Journals Section -->
+<div id="journals-content" class="contribution-section" style="display: none;">
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Deep Learning Architectures For Creating Large Language Models (LLMs)</div>
+                    <div class="mdc-card__secondary">AJSE 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Place: AJSE, Year: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://drive.google.com/file/d/1X9dWsp2aqKHav6y3W5XCGt6NQzlkkS_w/view?usp=sharing" download="Deep_Learning_Architectures_For_Creating_Large_Language_Models_LLMs_.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                        <a href="Deep_Learning_Architectures_For_Creating_Large_Language_Models_LLMs_.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Boundary-Based BenchMark Analysis For Diverse Models & Networks On A Generic Data Set</div>
+                    <div class="mdc-card__secondary">MTAP 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Place: MTAP, Year: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://drive.google.com/file/d/1mgM7_0ohanlPBpma8glAoRiM-jwNv4-H/view?usp=sharing" download="BenchMark_Analysis_Of_Deep_Learning_Models.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                        <a href="BenchMark_Analysis_Of_Deep_Learning_Models.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Preprints Section -->
+<div id="preprints-content" class="contribution-section" style="display: none;">
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Identifying The Case For The Prediction of Mental Health Using AdaBoost</div>
+                    <div class="mdc-card__secondary">arXiv</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Preprint at arXiv</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://drive.google.com/file/d/1rvXJsNerRUPfe1mGZ24eD6L63m8RzF7n/view?usp=sharing" download="Identifying_The_Case_For_The_Prediction_of_Mental_Health_Using_AdaBoost.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                        <a href="Identifying_The_Case_For_The_Prediction_of_Mental_Health_Using_AdaBoost.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Patents Section -->
+<div id="patents-content" class="contribution-section" style="display: none;">
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Innovative Algorithms for Efficient Data Processing</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://drive.google.com/file/d/2abcd3E4abcd/view?usp=sharing" download="Innovative_Algorithms_Patent_2024.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                        <a href="Innovative_Algorithms_Patent_2024.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Book Series Section -->
+<div id="book-series-content" class="contribution-section" style="display: none;">
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Advancements in Artificial Intelligence and Machine Learning</div>
+                    <div class="mdc-card__secondary">Springer 2023</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Publisher: Springer, Year: 2023</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://drive.google.com/file/d/3abcd4E5fghijk/view?usp=sharing" download="Advancements_AIML_Springer_2023.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
+                        <a href="Advancements_AIML_Springer_2023.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .contribution-section {
+        margin-top: 20px;
+    }
+    .contribution-card {
+        margin-bottom: 20px;
+    }
+    .mdc-card__row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+    .mdc-card__primary {
+        font-weight: bold;
+    }
+    .mdc-card__secondary {
+        color: #666;
+    }
+    .mdc-card__actions {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<script>
+    function showContributionsContent() {
+        var selectedValue = document.getElementById('contributions-dropdown').value;
+
+        document.getElementById('conferences-content').style.display = 'none';
+        document.getElementById('journals-content').style.display = 'none';
+        document.getElementById('preprints-content').style.display = 'none';
+        document.getElementById('patents-content').style.display = 'none';
+        document.getElementById('book-series-content').style.display = 'none';
+
+        document.getElementById(selectedValue + '-content').style.display = 'block';
+    }
+</script>
+<style> .animated-card { background-color: lightgrey; padding: 20px; margin: 18px; border-radius: 8px; animation: highlight 3s infinite; } @keyframes highlight { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } } /* Update the styling for the tab button to match the top app bar */ .tablinks { background-color: #6200ea; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; border-radius: 4px; } .tablinks:hover { background-color: #3700b3; } .tablinks i { margin-right: 8px; }</style>
+
+</div>
+<!-- Experience Section -->
+<div class="tab-content" id="works-content" style="margin-left: 18px; margin-right: 18px;">
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Young Research Fellow</div>
+                    <div class="mdc-card__secondary">Ihub-Data, IIITH</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Duration: August 2023 - August 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="./work.html" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a> <!-- Corrected link path -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Junior Research Fellow</div>
+                    <div class="mdc-card__secondary">Special AIML Research Lab</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Duration: November 2022 - July 2023</div>
+                    <div class="mdc-card__actions">
+                        <a href="./jrfwrk.html" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a> <!-- Corrected link path -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Research Assistant</div>
+                    <div class="mdc-card__secondary">Data-Driven Societal Solutions Lab</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Duration: July 2021 - October 2023, April 2024 - May 2025</div>
+                    <div class="mdc-card__actions">
+                        <a href="./rawrk.html" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a> <!-- Corrected link path -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .experience-card {
+        margin-bottom: 20px;
+    }
+    .mdc-card__row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+    }
+    .mdc-card__primary {
+        font-weight: bold;
+    }
+    .mdc-card__secondary {
+        color: #666;
+    }
+    .mdc-card__actions {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<div class="tab-content" id="academics-content" style="margin-left: 18px; margin-right: 18px;">
+    <table class="academics-table">
+        <tr>
+            <th></th>
+            <th>Secondary School</th>
+            <th>High School</th>
+            <th>Undergraduation</th>
+        </tr>
+        <tr>
+            <td>Field</td>
+            <td>Language, Mathematics, Social and Sciences</td>
+            <td>Mathematics, Physics, Chemistry</td>
+            <td>Computer Science and Engineering</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>3.67 <a href="path/to/secondary_transcript.pdf" target="_blank"><button class="top-app-bar-button">View Transcript</button></a></td>
+            <td>3.78 <a href="path/to/highschool_transcript.pdf" target="_blank"><button class="top-app-bar-button">View Transcript</button></a></td>
+            <td>3.47 <a href="path/to/undergrad_transcript.pdf" target="_blank"><button class="top-app-bar-button">View Transcript</button></a></td>
+        </tr>
+        <tr>
+            <td>Courses</td>
+            <td>
+                <ul>
+                    <li>Computer Applications (JAVA)</li>
+                    <li>Mathematics</li>
+                    <li>English Language</li>
+                    <li>English Literature</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                    <li>Biology</li>
+                    <li>Geography</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Data Stuctures</li>
+                    <li>Operating Systems</li>
+                    <li>Computer Networks</li>
+                    <li>Deep Learning</li>
+                    <li>Natural Language Processing</li>
+                    <li>Machine Learning</li>
+                    <li>Automata and Compiler Design</li>
+                    <li>Information Security</li>
+                    <li>Software Engineering and Design</li>
+                    <li>DataBase Management Systems</li>
+                    <li>Object Oriented Programming</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Physics</li>
+                    <li>Mathematics</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                    <li>Sanskrit</li>
+                    <li>English</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Activities</td>
+            <td>
+                <ul>
+                    <li>Prefectorial Board</li>
+                    <li>School Magazine Editorial Board</li>
+                    <li>Quiz Captain</li>
+                    <li>Head Editor, School Magazine</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Top 6% in TGEAPCET out of 2 lakh candidates</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>HoD top 5 list</li>
+                    <li>President, Student Research Cell</li>
+                    <li>Founder, Special AIML Research Lab</li>
+                    <li>Pioneer, WeHub</li>
+                    <li>Junior Research Fellow, Special AIML Research Lab</li>
+                    <li>Head of Technical Department, Coding Brigade BVRIT</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Schools</td>
+            <td>Ramadevi Public School <a href="http://ramadevipublicschool.com" target="_blank"><button class="top-app-bar-button">View Website</button></a></td>
+            <td>Vijayaratna Junior College <a href="http://vijayaratnajuniorcollege.com" target="_blank"><button class="top-app-bar-button">View Website</button></a></td>
+            <td>
+                B V Raju Institute of Technology<br>
+                Jawaharlal Nehru Technological University, Hyderabad<br>
+                <a href="http://bvrit.ac.in" target="_blank"><button class="top-app-bar-button">View Website</button></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- Add the class for top app bar button styling in your CSS -->
+<style>
+.top-app-bar-button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+</style>
+
+<style>
+    .academics-table {
+        width: 100%; /* Full width */
+        border-collapse: collapse;
+        margin: 0; /* Remove margin */
+    }
+    .academics-table th,
+    .academics-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+        vertical-align: top; /* Align text at the top */
+    }
+    .academics-table th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.mdc-tab');
+        const contents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => {
+                    t.classList.remove('mdc-tab--active');
+                    t.querySelector('.mdc-tab-indicator').classList.remove('mdc-tab-indicator--active');
+                });
+                contents.forEach(c => c.classList.remove('tab-content-active'));
+                
+                this.classList.add('mdc-tab--active');
+                this.querySelector('.mdc-tab-indicator').classList.add('mdc-tab-indicator--active');
+                document.getElementById(this.id + '-content').classList.add('tab-content-active');
+            });
+        });
+        
+        document.getElementById('home-tab').addEventListener('click', function() {
+            document.getElementById('home-content').classList.add('tab-content-active');
+        });
+
+        document.getElementById('contributions-tab').addEventListener('click', function() {
+            document.getElementById('contributions-content').classList.add('tab-content-active');
+        });
+
+        document.getElementById('works-tab').addEventListener('click', function() {
+            document.getElementById('works-content').classList.add('tab-content-active');
+        });
+
+        document.getElementById('academics-tab').addEventListener('click', function() {
+            document.getElementById('academics-content').classList.add('tab-content-active');
+        });
+ document.getElementById('achievements-tab').addEventListener('click', function() {
+            document.getElementById('achievements-content').classList.add('tab-content-active');
+        });
+
+    });
+</script>
+
+
