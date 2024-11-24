@@ -12,6 +12,7 @@
     * {
         padding-left: 10px;
         padding-right: 10px;
+
     }
 }
 
@@ -82,11 +83,12 @@
             font-weight: bold;
             color: #6200EE; /* Highlight color matching the app bar */
         }
-        .mdc-tab-bar {
-            margin-left: 18px; 
-            margin-right: 18px; 
-            background-color: white;
-        }
+.mdc-tab-bar { width: calc(100% - 36px); /* Ensure proper width calculation */ background-color: white; overflow-x: hidden; /* Hide the scrollbar initially */ white-space: nowrap; /* Prevents the tab content from wrapping to the next line */ transition: overflow-x 0.3s; /* Smooth transition for scrollbar */ } .mdc-tab-bar:hover { overflow-x: auto; /* Show the scrollbar on hover */ } .mdc-tab-scroller__scroll-content { display: inline-flex; /* Ensure the content inside can flow horizontally */}
+
+
+
+
+
         .mdc-tab__content {
             height: 48px; /* Container height (label text only) */
             padding: 0 16px;
@@ -150,76 +152,104 @@
 
     <!-- Summary Section -->
     
- <!-- Tabs Section -->
-<div class="mdc-tab-bar" style="margin-left: 18px; margin-right: 18px;">
-    <div class="mdc-tab-scroller">
-        <div class="mdc-tab-scroller__scroll-area">
-            <div href="#home" class="mdc-tab-scroller__scroll-content">
-                                   <button class="mdc-tab mdc-tab--stacked mdc-tab--active" aria-selected="true" tabindex="0" id="home-tab">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
-                        </span>
-                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                    </button>
-             
-            
-                    <button href="#my-research" class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="contributions-tab">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__icon material-icons" aria-hidden="true">science</span>
-                            <span class="mdc-tab__text-label">My Research</span>
-                        </span>
-                        <span class="mdc-tab-indicator">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                    </button>
-               
-             
-                    <button href="#experience" class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="works-tab">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__icon material-icons" aria-hidden="true">work</span>
-                            <span class="mdc-tab__text-label">Experience</span>
-                        </span>
-                        <span class="mdc-tab-indicator">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                    </button>
-             
-                    <button href="#achievements" class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="achievements-tab">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__icon material-icons" aria-hidden="true">emoji_events</span>
-                            <span class="mdc-tab__text-label">Achievements</span>
-                        </span>
-                        <span class="mdc-tab-indicator">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                    </button>
-                
+<!-- Tabs Section -->
+<div class="mdc-tab-bar" style="display: flex; overflow-x: auto; white-space: nowrap; margin: 0 18px;">
+    <button class="mdc-tab mdc-tab--stacked mdc-tab--active" id="home-tab" data-hash="#home">
+        <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons">home</span>
+            <span class="mdc-tab__text-label">Home</span>
+        </span>
+        <span class="mdc-tab-indicator mdc-tab-indicator--active">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+        </span>
+        <span class="mdc-tab__ripple"></span>
+    </button>
 
-                    <button href="#achievements" class="mdc-tab mdc-tab--stacked" aria-selected="false" tabindex="0" id="academics-tab">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__icon material-icons" aria-hidden="true">school</span>
-                            <span class="mdc-tab__text-label">Academics</span>
-                        </span>
-                        <span class="mdc-tab-indicator">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                    </button>
-               
-            </div>
-        </div>
-    </div>
+    <button class="mdc-tab mdc-tab--stacked" id="research-tab" data-hash="#my-research">
+        <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons">science</span>
+            <span class="mdc-tab__text-label">My Research</span>
+        </span>
+        <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+        </span>
+        <span class="mdc-tab__ripple"></span>
+    </button>
+
+    <button class="mdc-tab mdc-tab--stacked" id="experience-tab" data-hash="#experience">
+        <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons">work</span>
+            <span class="mdc-tab__text-label">Experience</span>
+        </span>
+        <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+        </span>
+        <span class="mdc-tab__ripple"></span>
+    </button>
+
+    <button class="mdc-tab mdc-tab--stacked" id="achievements-tab" data-hash="#achievements">
+        <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons">emoji_events</span>
+            <span class="mdc-tab__text-label">Achievements</span>
+        </span>
+        <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+        </span>
+        <span class="mdc-tab__ripple"></span>
+    </button>
+
+    <button class="mdc-tab mdc-tab--stacked" id="academics-tab" data-hash="#academics">
+        <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons">school</span>
+            <span class="mdc-tab__text-label">Academics</span>
+        </span>
+        <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+        </span>
+        <span class="mdc-tab__ripple"></span>
+    </button>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    function activateTab(hash) {
+        if (!hash || !document.querySelector(hash + '-content')) {
+            hash = '#home'; // Default to Home
+        }
 
+        // Deactivate all tabs and hide all content
+        document.querySelectorAll('.mdc-tab').forEach(tab => tab.classList.remove('mdc-tab--active'));
+        document.querySelectorAll('.tab-content').forEach(content => (content.style.display = 'none'));
 
+        // Activate the clicked tab and show its content
+        const activeTab = document.querySelector(`.mdc-tab[data-hash="${hash}"]`);
+        const activeContent = document.querySelector(hash + '-content');
+
+        if (activeTab) activeTab.classList.add('mdc-tab--active');
+        if (activeContent) activeContent.style.display = 'block';
+
+        // Update the URL hash
+        window.location.hash = hash;
+    }
+
+    // Attach click event to each tab
+    document.querySelectorAll('.mdc-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const hash = tab.getAttribute('data-hash');
+            activateTab(hash);
+        });
+    });
+
+    // Handle URL hash changes
+    window.addEventListener('hashchange', () => {
+        activateTab(window.location.hash);
+    });
+
+    // Activate the correct tab on initial load
+    activateTab(window.location.hash);
+});
+</script>
 <!-- Tab Contents -->
-<div class="tab-content tab-content-active" id="home-content" style="margin-left: 18px; margin-right: 18px;">
+<div class="tab-content tab-content-active" id="home-content"style=" width:100% - 36px;margin-left: 18px; margin-right: 18px;">
   <div class="summary-card mdc-card">
         <div class="summary">
             <p>Has AI reached the pinnacle of Human Cognition? How advanced are its current knowledge acquisition capabilities? These questions sparked my interest in research on Epistemology in AI, calling it <span class="highlight">Epistemic AI</span>.</p>
@@ -259,7 +289,7 @@
         <p>21-25-CSE Undergraduate from B V Raju Institute of Technology, Narsapur.</p>
         <p>Alternate Email: saisathwik363@gmail.com</p>
         <p>Mobile: +919848070224</p>
-        <div class="mdc-card__actions">
+      <div class="mdc-card__actions" style="width: calc(100% - 36px);">
             <a href="https://drive.google.com/file/d/1QgmNpI22Ob2a5Kxh9zj-pPVVcTzG6tBG/view?usp=drivesdk" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Resume/CV</a>
             <a href="https://orcid.org/0009-0008-8057-8799" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Orcid</a>
             <a href="https://scholar.google.com/citations?user=z_EZUAwAAAAJ&hl=en" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Google Scholar</a>
@@ -272,93 +302,108 @@
 
 
 </div>
-<div class="tab-content" id="achievements-content" style="margin-left: 18px; margin-right: 18px;">
-    <div class="mdc-card achievements-card" style="margin: 18px;">
+
+
+<div class="tab-content" id="achievements-content" >
+    <div class="mdc-card achievements-card" style=" display: flex; flex-direction: column; gap: 18px;">
+        <!-- Achievements Content -->
         <div class="mdc-card__primary-action">
             <div class="mdc-card__content">
                 <div class="mdc-card__row">
                     <div class="mdc-card__secondary">
-                        <table style="width: 100%; border-collapse: 18px">
-                            <tr>
-                                <td style="width: 85%; border: 1px solid #000;">
-                                    <b>Young Research Fellowship:</b> Annual Award on Research for AI in Healthcare
-                                </td>
-                                <td style="width: 15%; border: 1px solid #000;">
-                                    <a href="Offer Letter-Sai Sathwik Kosuru.pdf" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Top in HoD Top 5 List:</b> Awarded to top 5 students for every batch ranked according to the following parameters: Research, Entrepreneurship, IT Skills, Oratory, and Ideation
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Special Mention in Infosys Campus Connect:</b> Awarded to the Top Student who presents Technology Coherently and Clearly
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Honor Card:</b> Awarded to the students who topped the class for at least 8 times
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Distinction Card:</b> Awarded to the Students with Aggregate >85%
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>SOP GK Olympiad:</b> Obtained Top 50 Rank in 2015
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>International Hackathon:</b> Awarded Appreciatory Prize
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="#" onclick="showDialog()" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Young Scientist Federation:</b> Obtained 2nd Special Prize for my Solution on Computer Memory Organization
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="Young scientist.pdf" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Prefectorial Badge:</b> Awarded to School Leadership Board Leader
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="prefectorial.pdf" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #000;">
-                                    <b>Obtained the first position in an intra-school debate event on the topic- "Use of animals for BioChemical experiments in Research Laboratories"</b>
-                                </td>
-                                <td style="border: 1px solid #000;">
-                                    <a href="Debate.pdf" style="color: linkcolor;">View</a>
-                                </td>
-                            </tr>
+                        <table class="responsive-table" style="width: 100%; border-collapse: collapse; margin: 0;">
+                            <tbody>
+                                <!-- Achievement 1 -->
+                                <tr>
+                                    <td style="width: 85%; border: 1px solid #000; padding: 8px;">
+                                        <b>Young Research Fellowship:</b> Annual Award on Research for AI in Healthcare
+                                    </td>
+                                    <td style="width: 15%; border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="Offer Letter-Sai Sathwik Kosuru.pdf" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 2 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Top in HoD Top 5 List:</b> Awarded to top 5 students for every batch ranked according to research, entrepreneurship, IT skills, oratory, and ideation
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 3 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Special Mention in Infosys Campus Connect:</b> Awarded to the top student who presents technology coherently and clearly
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 4 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Honor Card:</b> Awarded to the students who topped the class for at least 8 times
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 5 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Distinction Card:</b> Awarded to the Students with Aggregate >85%
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 6 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>SOP GK Olympiad:</b> Obtained Top 50 Rank in 2015
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 7 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>International Hackathon:</b> Awarded Appreciatory Prize
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="#" onclick="showDialog()" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 8 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Young Scientist Federation:</b> Obtained 2nd Special Prize for my Solution on Computer Memory Organization
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="Young scientist.pdf" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 9 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Prefectorial Badge:</b> Awarded to School Leadership Board Leader
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="prefectorial.pdf" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                                <!-- Achievement 10 -->
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px;">
+                                        <b>Obtained the first position in an intra-school debate event on the topic: "Use of animals for BioChemical experiments in Research Laboratories"</b>
+                                    </td>
+                                    <td style="border: 1px solid #000; text-align: center; padding: 8px;">
+                                        <a href="Debate.pdf" style="color: blue; text-decoration: underline;">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -373,7 +418,7 @@
     }
 </script>
 <!-- Contributions Tab Content -->
-<div class="tab-content" id="contributions-content" style="margin-left: 18px; margin-right: 18px;">
+<div class="tab-content" id="my-research-content" style="margin-left: 18px; margin-right: 18px;">
 <!-- Animated Card for Current Work --> <div class="animated-card"> <h3 style="font-weight: bold; font-size: larger;">Currently working on</h3> <p><p>I am currently working on tackling expensive, nuanced architectural performance trade-offs in designing deep learning models. I believe this work results will introduce a new paradigm of future research studies that help AI architects simplify how they optimize their algorithms using a simple cohort of parameters/rules. Our paper will be submitted for ICML 2025.</p></p> </div>
     <label for="contributions-dropdown">Select Category:</label>
     <select id="contributions-dropdown" onchange="showContributionsContent()">
@@ -576,6 +621,14 @@
 
 
 <style>
+@media (max-width: 600px) {
+    * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
     .contribution-section {
         margin-top: 20px;
     }
@@ -593,10 +646,7 @@
     .mdc-card__secondary {
         color: #666;
     }
-    .mdc-card__actions {
-        display: flex;
-        gap: 10px;
-    }
+   .mdc-card__actions { display: flex; flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines if needed */ justify-content: space-between; width: calc(100% - 36px); /* Ensure the width is correctly calculated */ }
 </style>
 
 <script>
@@ -612,11 +662,19 @@
         document.getElementById(selectedValue + '-content').style.display = 'block';
     }
 </script>
-<style> .animated-card { background-color: lightgrey; padding: 20px; margin: 18px; border-radius: 8px; animation: highlight 3s infinite; } @keyframes highlight { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } } /* Update the styling for the tab button to match the top app bar */ .tablinks { background-color: #6200ea; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; border-radius: 4px; } .tablinks:hover { background-color: #3700b3; } .tablinks i { margin-right: 8px; }</style>
+<style>
+@media (max-width: 600px) {
+    * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+ .animated-card { background-color: lightgrey; padding: 20px; margin: 18px; border-radius: 8px; animation: highlight 3s infinite; } @keyframes highlight { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } } /* Update the styling for the tab button to match the top app bar */ .tablinks { background-color: #6200ea; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; border-radius: 4px; } .tablinks:hover { background-color: #3700b3; } .tablinks i { margin-right: 8px; }</style>
 
 </div>
 <!-- Experience Section -->
-<div class="tab-content" id="works-content" style="margin-left: 18px; margin-right: 18px;">
+<div class="tab-content" id="experience-content" style="margin-left: 18px; margin-right: 18px;">
     <div class="mdc-card experience-card" style="margin: 18px;">
         <div class="mdc-card__primary-action">
             <div class="mdc-card__content">
@@ -668,6 +726,14 @@
 </div>
 
 <style>
+@media (max-width: 600px) {
+    * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
     .experience-card {
         margin-bottom: 20px;
     }
@@ -789,6 +855,14 @@
 
 <!-- Add the class for top app bar button styling in your CSS -->
 <style>
+@media (max-width: 600px) {
+    * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
 .top-app-bar-button {
     background-color: #6200ea;
     color: white;
@@ -821,46 +895,4 @@
         background-color: #f2f2f2;
     }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.mdc-tab');
-        const contents = document.querySelectorAll('.tab-content');
-        
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                tabs.forEach(t => {
-                    t.classList.remove('mdc-tab--active');
-                    t.querySelector('.mdc-tab-indicator').classList.remove('mdc-tab-indicator--active');
-                });
-                contents.forEach(c => c.classList.remove('tab-content-active'));
-                
-                this.classList.add('mdc-tab--active');
-                this.querySelector('.mdc-tab-indicator').classList.add('mdc-tab-indicator--active');
-                document.getElementById(this.id + '-content').classList.add('tab-content-active');
-            });
-        });
-        
-        document.getElementById('home-tab').addEventListener('click', function() {
-            document.getElementById('home-content').classList.add('tab-content-active');
-        });
-
-        document.getElementById('contributions-tab').addEventListener('click', function() {
-            document.getElementById('contributions-content').classList.add('tab-content-active');
-        });
-
-        document.getElementById('works-tab').addEventListener('click', function() {
-            document.getElementById('works-content').classList.add('tab-content-active');
-        });
-
-        document.getElementById('academics-tab').addEventListener('click', function() {
-            document.getElementById('academics-content').classList.add('tab-content-active');
-        });
- document.getElementById('achievements-tab').addEventListener('click', function() {
-            document.getElementById('achievements-content').classList.add('tab-content-active');
-        });
-
-    });
-
-</script>
 
