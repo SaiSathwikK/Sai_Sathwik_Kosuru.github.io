@@ -141,7 +141,7 @@
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 <span class="mdc-top-app-bar__title">Sai Sathwik Kosuru</span>
             </section>
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"> <a href="mailto:SaiSathwik363@gmail.com" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Contact Me"> <i class="material-icons">mail_outline</i> </a> <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="View My CV" onclick="window.location.href='Sai_Sathwik_Kosuru_CV.pdf'"> <i class="material-icons">description</i> </button>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"> <a href="mailto:SaiSathwik363@gmail.com" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Contact Me"> <i class="material-icons">mail_outline</i> </a> <button class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="View My CV" onclick="window.location.href='path-to-your-cv.pdf'"> <i class="material-icons">description</i> </button>
             </section>
         </div>
     </header>
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Alternate Email: saisathwik363@gmail.com</p>
         <p>Mobile: +919848070224</p>
       <div class="mdc-card__actions" style="width: calc(100% - 36px);">
-            <a href="Sai_Sathwik_Kosuru_CV.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Resume/CV</a>
+            <a href="https://drive.google.com/file/d/1QgmNpI22Ob2a5Kxh9zj-pPVVcTzG6tBG/view?usp=drivesdk" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Resume/CV</a>
             <a href="https://orcid.org/0009-0008-8057-8799" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Orcid</a>
             <a href="https://scholar.google.com/citations?user=z_EZUAwAAAAJ&hl=en" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Google Scholar</a>
             <a href="https://www.linkedin.com/in/sai-sathwik-kosuru-ba53b4223" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">LinkedIn</a>
@@ -333,14 +333,126 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- Contributions Tab Content -->
 <div class="tab-content" id="my-research-content" style="margin-left: 18px; margin-right: 18px;">
 <!-- Animated Card for Current Work --> <div class="animated-card"> <h3 style="font-weight: bold; font-size: larger;">Currently working on</h3> <p><p>I am currently working on tackling expensive, nuanced architectural performance trade-offs in designing deep learning models. I believe this work results will introduce a new paradigm of future research studies that help AI architects simplify how they optimize their algorithms using a simple cohort of parameters/rules. Our paper will be submitted for ICML 2025.</p></p> </div>
-   <label for="contributions-dropdown">Select Category:</label>
-    <select id="contributions-dropdown" onchange="showContributionsContent()">
-        <option value="conferences" selected>Conferences</option>
-        <option value="journals">Journals</option>
-        <option value="preprints">Preprints</option>
-        <option value="patents">Patents</option>
-        <option value="book-series">Book Series</option>
-    </select>
+ <label for="contributions-dropdown">Select Category:</label>
+<select id="contributions-dropdown" onchange="showContributionsContent()">
+    <option value="featured" selected>Featured</option>
+    <option value="conferences">Conferences</option>
+    <option value="journals">Journals</option>
+    <option value="preprints">Preprints</option>
+    <option value="patents">Patents</option>
+    <option value="book-series">Book Series</option>
+</select>
+
+<!-- Featured Section -->
+<div id="featured-content" class="contribution-section">
+    <!-- Patent 1 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Structurometric Analysis of Deep Learning</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="strct.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patent 2 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Automation of Preliminary Investigations in Legal Systems using Computational Techniques</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="lgl1.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patent 3 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">A Biocompatible Device Based on Multilingual Sync: A Novel Method for Mechanico-Enabled Computational Automated Speech Recognition from Videos and Enhancements for the Dumb</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="bioimp.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CVPR Paper 1 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">DynPR: Dynamic Evaluation of Patterns Across Data Streams Via Deployed Applications</div>
+                    <div class="mdc-card__secondary">CVPR 2025, Canada</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Place: Canada, Year: 2025</div>
+                    <div class="mdc-card__actions">
+                        <a href="DynPR__Dynamic_Evaluation_of_Patterns_Across_Data_Streams_Via_Deployed_Applications.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CVPR Paper 2 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">GICaps: Leveraging Geometrico-Physical Computer Vision Techniques On Capsule Vision Endoscopy</div>
+                    <div class="mdc-card__secondary">CVPR 2025</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Place: CVPR, Year: 2025</div>
+                    <div class="mdc-card__actions">
+                        <a href="GICaps__Leveraging_Geometrico_Physical_Computer_Vision_Techniques_On_Capsule_Vision_Endoscopy.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Effort Estimation Card -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Empirical Techniques for Effort Estimation of Deep Learning Models</div>
+                    <div class="mdc-card__secondary">ICPR 2024, India</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Place: India, Year: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="Evaluation_Techniques_For_Effort_Estimation_in_Designing_Effective_ML_Models.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Conferences Section -->
     <div id="conferences-content" class="contribution-section">
@@ -492,18 +604,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Patents Section -->
 <div id="patents-content" class="contribution-section" style="display: none;">
+    <!-- Patent 1 -->
     <div class="mdc-card contribution-card" style="margin: 18px;">
         <div class="mdc-card__primary-action">
             <div class="mdc-card__content">
                 <div class="mdc-card__row">
-                    <div class="mdc-card__primary">Innovative Algorithms for Efficient Data Processing</div>
+                    <div class="mdc-card__primary">Structurometric Analysis of Deep Learning</div>
                     <div class="mdc-card__secondary">Patent Filed 2024</div>
                 </div>
                 <div class="mdc-card__row">
                     <div class="mdc-card__primary">Filed: 2024</div>
                     <div class="mdc-card__actions">
-                        <a href="https://drive.google.com/file/d/2abcd3E4abcd/view?usp=sharing" download="Innovative_Algorithms_Patent_2024.pdf" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">Download PDF</a>
-                        <a href="Innovative_Algorithms_Patent_2024.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                        <a href="strct.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patent 2 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Automation of Preliminary Investigations in Legal Systems using Computational Techniques</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="lgl1.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patent 3 -->
+    <div class="mdc-card contribution-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">A Biocompatible Device Based on Multilingual Sync: A Novel Method for Mechanico-Enabled Computational Automated Speech Recognition from Videos and Enhancements for the Dumb</div>
+                    <div class="mdc-card__secondary">Patent Filed 2024</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Filed: 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="bioimp.html" target="_blank" class="mdc-button mdc-card__action mdc-card__action--button">View Publication</a>
                     </div>
                 </div>
             </div>
@@ -563,15 +711,24 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 <script>
+    // Ensure the Featured section is displayed by default on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        showContributionsContent(); // Call the function to set the default display
+    });
+
     function showContributionsContent() {
+        // Get the currently selected value in the dropdown
         var selectedValue = document.getElementById('contributions-dropdown').value;
 
+        // Hide all content sections by default
         document.getElementById('conferences-content').style.display = 'none';
         document.getElementById('journals-content').style.display = 'none';
         document.getElementById('preprints-content').style.display = 'none';
         document.getElementById('patents-content').style.display = 'none';
         document.getElementById('book-series-content').style.display = 'none';
+        document.getElementById('featured-content').style.display = 'none';
 
+        // Display the selected content section
         document.getElementById(selectedValue + '-content').style.display = 'block';
     }
 </script>
@@ -679,10 +836,10 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 </style>
 
-<!-- Experience Section with Dropdown to Toggle Professional and Voluntary Experiences -->
+<!-- Experience Section with Dropdown to Toggle Professional, Voluntary, and Non-Research/Software Experiences -->
 <div class="tab-content" id="experience-content" style="margin-left: 18px; margin-right: 18px;">
 
-    <!-- Dropdown for Professional and Voluntary Fields -->
+    <!-- Dropdown for Professional, Voluntary, and Non-Research/Software Fields -->
     <div class="mdc-card experience-card" style="margin: 18px;">
         <div class="mdc-card__primary-action">
             <div class="mdc-card__content">
@@ -690,6 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <select id="experience-type" class="mdc-select">
                     <option value="professional">Professional</option>
                     <option value="voluntary">Voluntary</option>
+                    <option value="non-research">Non-Research/Software</option>
                 </select>
             </div>
         </div>
@@ -779,55 +937,97 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     </div>
+
+  <!-- Non-Research/Software Experiences -->
+<div id="non-research-experience" class="experience-details" style="display:none;">
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Data Processing Intern</div>
+                    <div class="mdc-card__secondary">GPTFu Ltd.</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Duration: April 2023 - July 2023</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://www.oneconvergence.com/index.php" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Summer Internship</div>
+                    <div class="mdc-card__secondary">L4G: Google GenAI</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Duration: July 2024 - November 2024</div>
+                    <div class="mdc-card__actions">
+                        <a href="https://docs.google.com/presentation/d/1MLieNrLvU4KZdXq7blaKFIGq3YmvlMKQ/edit?usp=sharing&ouid=116899136882131523069&rtpof=true&sd=true" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">AWS AICTE-Eduskills Internship</div>
+                    <div class="mdc-card__secondary">July 2022 - September 2022</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__actions">
+                        <a href="https://www.credly.com/badges/b639d970-f381-4c07-a24f-d4a1925fdc00/public_url" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Google AICTE-Eduskills Internship</div>
+                    <div class="mdc-card__secondary">June 2022 - October 2022</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__actions">
+                        <a href="https://youtu.be/k-6aZoTtP2I?si=n-jilhBDKvvKzb6o" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <script>
-    // Handle the dropdown change event to toggle between professional and voluntary experiences
+    // Handle the dropdown change event to toggle between experiences
     document.getElementById("experience-type").addEventListener("change", function() {
         var experienceType = this.value;
-        
-        // Hide both sections by default
+
+        // Hide all sections by default
         document.getElementById("professional-experience").style.display = "none";
         document.getElementById("voluntary-experience").style.display = "none";
+        document.getElementById("non-research-experience").style.display = "none";
 
         // Show the selected section
         if (experienceType === "professional") {
             document.getElementById("professional-experience").style.display = "block";
         } else if (experienceType === "voluntary") {
             document.getElementById("voluntary-experience").style.display = "block";
+        } else if (experienceType === "non-research") {
+            document.getElementById("non-research-experience").style.display = "block";
         }
     });
 </script>
-
-<style>
-@media (max-width: 600px) {
-    * {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
-
-    .experience-card {
-        margin-bottom: 20px;
-    }
-    .mdc-card__row {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 0;
-    }
-    .mdc-card__primary {
-        font-weight: bold;
-    }
-    .mdc-card__secondary {
-        color: #666;
-    }
-    .mdc-card__actions {
-        display: flex;
-        gap: 10px;
-    }
-</style>
-
 <div class="tab-content" id="academics-content" style="margin-left: 18px; margin-right: 18px;">
     <table class="academics-table">
         <tr>
