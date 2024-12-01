@@ -839,15 +839,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- Experience Section with Dropdown to Toggle Professional, Voluntary, and Non-Research/Software Experiences -->
 <div class="tab-content" id="experience-content" style="margin-left: 18px; margin-right: 18px;">
 
-    <!-- Dropdown for Professional, Voluntary, and Non-Research/Software Fields -->
+     <!-- Dropdown for Professional, Teaching, Voluntary, and Non-Research/Software Fields -->
     <div class="mdc-card experience-card" style="margin: 18px;">
         <div class="mdc-card__primary-action">
             <div class="mdc-card__content">
                 <label for="experience-type">Select Experience Type</label>
                 <select id="experience-type" class="mdc-select">
                     <option value="professional">Professional</option>
-                    <option value="voluntary">Voluntary</option>
+                    <option value="teaching">Teaching</option>
                     <option value="non-research">Non-Research/Software</option>
+                    <option value="voluntary">Voluntary</option>
                 </select>
             </div>
         </div>
@@ -922,6 +923,24 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     </div>
+<!-- Teaching Experiences -->
+<div id="teaching-experience" class="experience-details" style="display:none;">
+    <div class="mdc-card experience-card" style="margin: 18px;">
+        <div class="mdc-card__primary-action">
+            <div class="mdc-card__content">
+                <div class="mdc-card__row">
+                    <div class="mdc-card__primary">Undergraduate Teaching Assistant</div>
+                    <div class="mdc-card__secondary">2021 - 2022</div>
+                </div>
+                <div class="mdc-card__row">
+                    <div class="mdc-card__actions">
+                        <a href="techng.html" class="mdc-button mdc-card__action mdc-card__action--button">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Voluntary Experiences -->
     <div id="voluntary-experience" class="experience-details" style="display:none;">
@@ -1031,20 +1050,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide all sections by default
         document.getElementById("professional-experience").style.display = "none";
+        document.getElementById("teaching-experience").style.display = "none";
         document.getElementById("voluntary-experience").style.display = "none";
         document.getElementById("non-research-experience").style.display = "none";
 
         // Show the selected section
         if (experienceType === "professional") {
             document.getElementById("professional-experience").style.display = "block";
+        } else if (experienceType === "teaching") {
+            document.getElementById("teaching-experience").style.display = "block";
         } else if (experienceType === "voluntary") {
             document.getElementById("voluntary-experience").style.display = "block";
         } else if (experienceType === "non-research") {
             document.getElementById("non-research-experience").style.display = "block";
         }
     });
-</script>
-<div class="tab-content" id="academics-content" style="margin-left: 18px; margin-right: 18px;">
+</script><div class="tab-content" id="academics-content" style="margin-left: 18px; margin-right: 18px;">
     <table class="academics-table">
         <tr>
             <th></th>
@@ -1386,6 +1407,5 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("This document will be uploaded soon. Thanks for viewing my website!");
     }
 </script>
-
 
 
